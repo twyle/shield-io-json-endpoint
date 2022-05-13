@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build-Backend:
+  Build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,9 +31,9 @@ jobs:
       run: |
         if [ -d tests ] || [ -d test ]; then FLASK_APP=${{secrets.FLASK_APP}} FLASK_ENV=${{secrets.FLASK_ENV}} python -m pytest; fi
 
-  Test-Backend:
+  Test:
     runs-on: ubuntu-latest
-    needs: [Build-Frontend]
+    needs: [Build]
     strategy:
       matrix:
         python-version: [3.7, 3.8, 3.9]

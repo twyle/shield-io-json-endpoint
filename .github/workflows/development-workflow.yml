@@ -67,7 +67,7 @@ jobs:
   DeployDev:
     name: Deploy to Dev
     if: github.event_name == 'pull_request'
-    needs: [Build-Backend]
+    needs: [Test-Local]
     runs-on: ubuntu-latest
     environment:
       name: Development

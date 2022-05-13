@@ -22,7 +22,7 @@ repos:
     - --branch
     - production
     id: no-commit-to-branch
-  - id: pretty-format-json
+#  - id: pretty-format-json
   - id: requirements-txt-fixer
   repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v4.2.0

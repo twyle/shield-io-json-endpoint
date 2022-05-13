@@ -84,3 +84,13 @@ jobs:
         env:
           HD_FLASK_ENV: ${{secrets.FLASK_ENV}}
           HD_FLASK_APP: ${{secrets.FLASK_APP}}
+
+  Test-Remote:
+    name: Test Remote Deployment
+    needs: [DeployDev]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test application
+      run: |
+        sleep 20
+        curl https://${{env.APP_NAME}}-dev.herokuapp.com/api/v1

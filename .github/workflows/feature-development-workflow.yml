@@ -1,10 +1,9 @@
-name: "Development Build"
-on:
-  pull_request:
-    branches: [ development ]
+name: Feature Development Build
 
-env:
-  APP_NAME: shields-io
+on:
+  push:
+    branches-ignore: [development, staging, production, release]
+  workflow_dispatch:
 
 jobs:
   Build:
@@ -34,7 +33,7 @@ jobs:
       run: |
         if [ -d tests ] || [ -d test ]; then FLASK_APP=${{secrets.FLASK_APP}} FLASK_ENV=${{secrets.FLASK_ENV}} python -m pytest; fi
 
-  Test-Local:
+  Test:
     runs-on: ubuntu-latest
     environment:
       name: Development
@@ -63,34 +62,3 @@ jobs:
         FLASK_APP=${{secrets.FLASK_APP}} FLASK_ENV=${{secrets.FLASK_ENV}} python manage.py run &
         sleep 10
         curl http://127.0.0.1:5000/api/v1/
-
-  DeployDev:
-    name: Deploy to Dev
-    if: github.event_name == 'pull_request'
-    needs: [Build-Backend]
-    runs-on: ubuntu-latest
-    environment:
-      name: Development
-      url: 'https://${{env.APP_NAME}}-dev.herokuapp.com/'
-    steps:
-      - name: Deploy
-        run: echo I am deploying ${{ env.APP_NAME }} at https://${{env.APP_NAME}}-dev.herokuapp.com/
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "${{ env.APP_NAME }}-dev" #Must be unique in Heroku
-          heroku_email: "${{ secrets.HEROKU_EMAIL }}"
-        env:
-          HD_FLASK_ENV: ${{secrets.FLASK_ENV}}
-          HD_FLASK_APP: ${{secrets.FLASK_APP}}
-
-  Test-Remote:
-    name: Test Remote Deployment
-    needs: [DeployDev]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Test application
-      run: |
-        sleep 20
-        curl https://${{env.APP_NAME}}-dev.herokuapp.com/api/v1

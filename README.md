@@ -101,33 +101,15 @@ make test
 
 ## Release History
 
-## v0.1.0 (2022-04-08)
+### v0.1.0 (2022-05-13)
 
-### Feat
+#### Feat
 
-- added more badges.
-- added more badges.
-- added more badges.
-- added more badges.
-- added the feature development badge.
-- added the feature development badge.
-- added the feature development badge.
-- added the feature development badge.
-- added the feature development badge.
-- added the pre-commit.
-- added the pre-commit.
-- added the pre-commit.
-- added the pre-commit.
-- added isort to the pre-config file
-- altered the badge structure.
-- altered the badge structure.
-- added the workflows.
-- added the workflows.
+- created the tests.
+- created the default route.
+- updated the README file.
 
-### Fix
-
-- fixed the linting errors.
-- fixed isort.
+### v0.0.1 (2022-05-01)
 
 
 

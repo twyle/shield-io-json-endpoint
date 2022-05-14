@@ -1,6 +1,7 @@
 # Shields IO JSON Endpoint.
 > This API serves out JSON data for creating a dynamic badge using shields.io.
 
+![Custom badge](https://img.shields.io/endpoint?url=https://${{env.APP_NAME}}-dev.herokuapp.com/api/v1/data?username=lyle)
 [![Website https://flask-react-blog-dev.herokuapp.com/](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://flask-react-blog-dev.herokuapp.com/)
 [![security: bandit][bandit-image]][bandit-url]
 [![Imports: isort][isort-image]][isort-url]

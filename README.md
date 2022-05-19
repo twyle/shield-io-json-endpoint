@@ -1,6 +1,7 @@
-# Shields IO JSON Endpoint.
+# GitHub Dynamic Badge.
 > This API serves out JSON data for creating a dynamic badge using shields.io.
 
+![Custom badge](https://img.shields.io/endpoint?url=https://shields-io-dev.herokuapp.com/api/v1/data?username=lyle)
 [![Website https://flask-react-blog-dev.herokuapp.com/](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://flask-react-blog-dev.herokuapp.com/)
 [![security: bandit][bandit-image]][bandit-url]
 [![Imports: isort][isort-image]][isort-url]
@@ -19,7 +20,7 @@
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Gunicorn](https://img.shields.io/badge/gunicorn-%298729.svg?style=for-the-badge&logo=gunicorn&logoColor=white)
 
-This template allows one to build and deploy a Flask API to Heeroku using GitHub Actions.
+This application serves out JSON data that is used to generate a dynamic badge using shield.io. You can read more about it, including how it was developed over at ![medium](https://medium.com/@lyle-okoth/github-oauth-using-python-and-flask-d051c6fea395).
 
 ![](header.png)
 
@@ -79,9 +80,13 @@ make run
 
 ## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Add the following to your github profile:
+```sh
+![Custom badge](https://img.shields.io/endpoint?url=https://shields-io-dev.herokuapp.com/api/v1/data?username=lyle)
+```
+You will get:
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
+![Custom badge](https://img.shields.io/endpoint?url=https://shields-io-dev.herokuapp.com/api/v1/data?username=lyle)
 
 ## Development setup
 

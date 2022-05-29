@@ -20,7 +20,7 @@
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Gunicorn](https://img.shields.io/badge/gunicorn-%298729.svg?style=for-the-badge&logo=gunicorn&logoColor=white)
 
-This application serves out JSON data that is used to generate a dynamic badge using shield.io. You can read more about it, including how it was developed over at [medium]([https://medium.com/@lyle-okoth/github-oauth-using-python-and-flask-d051c6fea395](https://medium.com/@lyle-okoth/a-json-end-point-for-shield-io-badge-85e25751bcec).
+This application serves out JSON data that is used to generate a dynamic badge using shield.io. You can read more about it, including how it was developed over at [medium](https://medium.com/@lyle-okoth/a-json-end-point-for-shield-io-badge-85e25751bcec).
 
 ![](header.png)
 
